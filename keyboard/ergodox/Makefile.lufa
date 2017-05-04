@@ -47,6 +47,9 @@ TMK_DIR = ../../tmk_core
 # Directory keyboard dependent files exist
 TARGET_DIR = .
 
+# The keymap to use
+KEYMAP = kaye
+
 # project specific files
 SRC =	keymap_common.c \
 	matrix.c \
