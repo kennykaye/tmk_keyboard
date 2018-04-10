@@ -7,17 +7,17 @@ debug_config_t debug_config = {
 /* GCC Bug 10676 - Using unnamed fields in initializers
  * https://gcc.gnu.org/bugzilla/show_bug.cgi?id=10676 */
 #if GCC_VERSION >= 40600
-    .enable = false,
-    .matrix = false,
-    .keyboard = false,
-    .mouse = false,
+    .enable = true,
+    .matrix = true,
+    .keyboard = true,
+    .mouse = true,
     .reserved = 0
 #else
     {
-        false,  // .enable
-        false,  // .matrix
-        false,  // .keyboard
-        false,  // .mouse
+        true,  // .enable
+        true,  // .matrix
+        true,  // .keyboard
+        true,  // .mouse
         0       // .reserved
     }
 #endif

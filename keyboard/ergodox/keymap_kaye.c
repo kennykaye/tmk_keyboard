@@ -29,7 +29,7 @@ const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      * position of the Alt and GUI keys.
      *
      * ,--------------------------------------------------.           ,--------------------------------------------------.
-     * |  Esc   |   1  |   2  |   3  |   4  |   5  |  ~   |           |      |   6  |   7  |   8  |   9  |   0  |   =    |
+     * |   ~    |   1  |   2  |   3  |   4  |   5  |      |           |      |   6  |   7  |   8  |   9  |   0  |   =    |
      * |--------+------+------+------+------+-------------|           |------+------+------+------+------+------+--------|
      * |  Tab   |   Q  |   D  |   R  |   W  |   B  | HOME |           | PgUp |   J  |   F  |   U  |   P  |   "  |   -    |
      * |--------+------+------+------+------+------|      |           |      |------+------+------+------+------+--------|
@@ -40,7 +40,7 @@ const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      *   | Left | Down |  Up  | Rght | LGui |                                       |   [  |   ]  |   \  |   ;   | +L2 |
      *   `----------------------------------'                                       `----------------------------------'
      *                                        ,-------------.       ,-------------.
-     *                                        |CpsLck| Del  |       | PgDn | PgUp |
+     *                                        | Home | End  |       | PgDn | PgUp |
      *                                 ,------|------|------|       |------+------+------.
      *                                 |      |      | LAlt |       | RAlt |      |      |
      *                                 | BkSp | ~L1  |------|       |------|   :  | Space|
@@ -50,15 +50,15 @@ const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
     KEYMAP(
         // left hand
-        ESC, 1,   2,   3,   4,   5,   GRV,
+        GRV, 1,   2,   3,   4,   5,   NO,
         TAB, Q,   D,   R,   W,   B,   HOME,
         FN3, A,   S,   H,   T,   G,
         LSFT,Z,   X,   M,   C,   V,   END,
         LEFT,DOWN,UP,  RGHT,FN5,
-                                      CAPS,DEL,
+                                      HOME, END,
                                            LALT,
                                  BSPC,FN1, LCTL,
-                                 
+
         // right hand
              NO,  6,   7,   8,   9,   0,   EQL,
              PGUP,J,   F,   U,   P,   QUOT,MINS,
@@ -81,11 +81,11 @@ const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      * obvious if you start typing on a secondary layer.
      *
      * ,--------------------------------------------------.           ,--------------------------------------------------.
-     * | Teensy |  F1  |  F2  |  F3  |  F4  |  F5  |  F11 |           |  F12 |  F6  |  F7  |  F8  |  F9  |  F10 |  FN31  |
+     * |   TRNS |  F1  |  F2  |  F3  |  F4  |  F5  |  F11 |           |  F12 |  F6  |  F7  |  F8  |  F9  |  F10 |  FN31  |
      * |--------+------+------+------+------+-------------|           |------+------+------+------+------+------+--------|
      * |   TRNS |      |      |      |      |      | TRNS |           | TRNS |      |      |      |      |      |  TRNS  |
      * |--------+------+------+------+------+------|      |           |      |------+------+------+------+------+--------|
-     * |   TRNS |      |      |      |      |      |------|           |------| Left | Down |  Up  | Right|      |  TRNS  |
+     * | Teensy |      |      |      |      |      |------|           |------| Left | Down |  Up  | Right|      |  TRNS  |
      * |--------+------+------+------+------+------| +L2  |           |      |------+------+------+------+------+--------|
      * |   TRNS |      |      |      |      |      |      |           |      |      |      |      |      |      |  TRNS  |
      * `--------+------+------+------+------+-------------'           `-------------+------+------+------+------+--------'
@@ -102,9 +102,9 @@ const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
     KEYMAP(
         // left hand
-        FN31,F1,  F2,  F3,  F4,  F5,  F11,
+        TRNS,F1,  F2,  F3,  F4,  F5,  F11,
         TRNS,NO,  NO,  NO,  NO,  NO,  TRNS,
-        TRNS,NO,  NO,  NO,  NO,  NO,
+        FN31,NO,  NO,  NO,  NO,  NO,
         TRNS,NO,  NO,  NO,  NO,  NO,  FN2,
         TRNS,TRNS,MPLY,MPRV,MNXT,
                                       NO,  NO,
@@ -137,10 +137,10 @@ const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     * |   TRNS |      |      |      |      |      | TRNS |           | TRNS |      |   7  |   8  |   9  |   +  | Bkspc  |
     * |--------+------+------+------+------+------|      |           |      |------+------+------+------+------+--------|
     * |   TRNS |      |      |      |      |      |------|           |------|      |   4  |   5  |   6  |   +  | Enter  |
-    * |--------+------+------+------+------+------|      |           | -L0  |------+------+------+------+------+--------|
+    * |--------+------+------+------+------+------|      |           | TRNS |------+------+------+------+------+--------|
     * |   TRNS |      |      |      |      |      |      |           |      |      |   1  |   2  |   3  | Enter| Enter  |
     * `--------+------+------+------+------+-------------'           `-------------+------+------+------+------+--------'
-    *   | TRNS | TRNS | LALT |      |      |                                       |   0  |   0  |   .  | Enter| Enter|
+    *   | TRNS | TRNS | LALT |      |      |                                       |   0  |   0  |   .  | Enter| -L0  |
     *   `----------------------------------'                                       `----------------------------------'
     *                                        ,-------------.       ,-------------.
     *                                        |      |      |       | TRNS | TRNS |
@@ -165,8 +165,8 @@ const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
              NO,  NO,  NLCK,SLSH,PAST,PMNS,BSPC,
              TRNS,NO,  P7,  P8,  P9,  PPLS,BSPC,
                   NO,  P4,  P5,  P6,  PPLS,PENT,
-             FN0, NO,  P1,  P2,  P3,  PENT,PENT,
-                       P0,  P0,  PDOT,PENT,PENT,
+             TRNS, NO,  P1,  P2,  P3,  PENT,PENT,
+                       P0,  P0,  PDOT,PENT,FN0,
         TRNS,TRNS,
         TRNS,
         TRNS,ENT, TRNS
